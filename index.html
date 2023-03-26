@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DOM Manipulation Example</title>
+	<style>
+		.list-item {
+			font-weight: normal;
+			color: black;
+		}
+	</style>
+	<script>
+		window.onload = function() {
+			// create a new paragraph element
+			var p = document.getElementById("demo");
+
+			// set the ID of the paragraph
+			// p.id = "my-paragraph";
+
+			// add the paragraph to the document body
+			// document.body.appendChild(p);
+
+			// add the onmouseover event handler for the paragraph
+			p.onmouseover = function() {
+				this.style.color = "red";
+			};
+
+			// add the onmouseout event handler for the paragraph
+			p.onmouseout = function() {
+				this.style.color = "black";
+			};
+
+			// create a new button element
+			var button = document.createElement("button");
+
+			// set the text and ID of the button
+			button.innerHTML = "Click me!";
+			button.id = "my-button";
+
+			// add the button to the document body
+			document.body.appendChild(button);
+
+			// add the onmouseover event handler for the button
+			button.onmouseover = function() {
+				button.innerHTML = "Mouse Over me";
+			};
+
+			// add the onmouseout event handler for the button
+			button.onmouseout = function() {
+				button.innerHTML = "Click me!";
+			};
+
+			// create a new input textbox element
+			var input = document.createElement("input");
+
+			// set the type and ID of the input textbox
+			input.type = "text";
+			input.id = "my-textbox";
+
+			// add the input textbox to the document body
+			document.body.appendChild(input);
+
+			// set the onclick event handler for the button
+			button.onclick = function() {
+				// get the paragraph element
+				var p = document.getElementById("demo");
+
+				// get the input textbox value
+				var value = input.value;
+
+				// set the paragraph innerHTML to the input textbox value
+				p.innerHTML = value;
+			};
+
+			// create a new unordered list element
+			var ul = document.createElement("ul");
+
+			// add some list items to the unordered list
+			for (var i = 1; i <= 5; i++) {
+				var li = document.createElement("li");
+				li.className = "list-item";
+				li.innerHTML = "List item " + i;
+				ul.appendChild(li);
+			}
+
+			// add the unordered list to the document body
+			document.body.appendChild(ul);
+
+			// get all the list items in the unordered list
+			var lis = ul.getElementsByTagName("li");
+
+			// add the onmouseover event handler for each list item
+			for (var i = 0; i < lis.length; i++) {
+				lis[i].onmouseover = function() {
+					this.style.color = "#bd2b63";
+					this.style.fontWeight = "bold";
+				};
+			}
+
+			// add the onmouseout event handler for each list item
+			for (var i = 0; i < lis.length; i++) {
+				lis[i].onmouseout = function() {
+					this.style.color = "black";
+					this.style.fontWeight = "normal";
+				};
+			}
+		}
+	</script>
+</head>
+<body>
+	<h1>DOM Manipulation Functionalities</h1>
+	<p id="demo">Heloo Hero Vired, I  am Swarna....<br>Check My Assignment</p>
+</body>
+</html>
